@@ -21,7 +21,7 @@ module FaradayMiddleware
       when 504
         raise Closeio::GatewayTimeout, env.body
       when ERROR_STATUSES
-        raise Closeio::Error, "#{env.status}: #{env.body}"
+        raise Closeio::Error, env.body
       end
     end
   end
